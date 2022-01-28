@@ -1,5 +1,6 @@
 package frc.robot;
 
+import frc.robot.commands.Square_Auto;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -15,6 +16,9 @@ public class OI {
         // Back button zeroes the drivetrain
         new JoystickButton(primaryJoystick, 7).whenPressed(
                 new InstantCommand(() -> DrivetrainSubsystem.getInstance().resetGyroscope())
+        );
+        new JoystickButton(primaryJoystick, 1).whenPressed(
+                new Square_Auto()
         );
     }
 
