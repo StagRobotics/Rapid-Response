@@ -24,5 +24,5 @@ public class RobotMap {
     //Motors
     public static int shooterMotor = 1;
     public static int backspinMotor = 2;
-    
+    public static int intakeMotor = 3;
 }

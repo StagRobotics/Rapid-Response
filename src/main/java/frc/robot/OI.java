@@ -1,7 +1,9 @@
 package frc.robot;
 
 import frc.robot.commands.Square_Auto;
+import frc.robot.commands.toggleIntake;
 import frc.robot.subsystems.DrivetrainSubsystem;
+import frc.robot.subsystems.Fangs;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.InstantCommand;
@@ -19,6 +21,9 @@ public class OI {
         );
         new JoystickButton(primaryJoystick, 1).whenPressed(
                 new Square_Auto()
+        );
+        new JoystickButton(primaryJoystick, 3).whenPressed(
+                new toggleIntake()
         );
     }
 
