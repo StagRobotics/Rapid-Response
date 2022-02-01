@@ -31,13 +31,26 @@ public class WebShooter extends Subsystem {
             System.out.println(Shoot);
 
             if (Shoot){
-                BSOn();
+                SMOn();
                 Shoot = false;
                 System.out.println(Shoot);
             }else{
+                SMOff();
                 Shoot = true;
                 System.out.println(Shoot);
             }
+    }
+
+    public void toggleSpin(){
+        if(Spin){
+            BSOn();
+            Spin = false;
+            System.out.print(Spin);
+        }else{
+            BSOff();
+            Spin = true;
+            System.out.print(Spin);
+        }
     }
 
     public void BSOn(){
