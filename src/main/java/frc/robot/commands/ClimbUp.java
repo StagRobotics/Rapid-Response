@@ -15,7 +15,7 @@ public class ClimbUp extends Command {
 
     @Override
     protected void execute(){
-        
+        Robot.m_SpidersWeb.ClimibUp();
     }
 
     @Override

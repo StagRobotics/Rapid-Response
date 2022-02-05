@@ -22,7 +22,12 @@ public class RobotMap {
     public static final int DRIVETRAIN_BACK_RIGHT_DRIVE_MOTOR = 5; // CAN Drive
 
     //Motors
-    public static int shooterMotor = 1;
-    public static int backspinMotor = 2;
-    public static int intakeMotor = 3;
+    public static int shooterMotor = 0;
+    public static int backspinMotor = 1;
+    public static int intakeMotor = 2;
+    public static int leftClimb = 3;
+    public static int rightClimb = 4;
+
+    //Digital Input
+    public static int climbLimit  = 4;
 }
