@@ -1,6 +1,7 @@
 package frc.robot;
 
 import frc.robot.subsystems.DrivetrainSubsystem;
+import frc.robot.subsystems.Echo;
 import frc.robot.subsystems.Fangs;
 import frc.robot.subsystems.SpidersWeb;
 import frc.robot.subsystems.WebShooter;
@@ -16,7 +17,7 @@ public class Robot extends TimedRobot {
     public static Fangs m_Fangs;
     public static WebShooter m_WebShooter;
     public static SpidersWeb m_SpidersWeb;
-    
+    public static Echo m_Echo;
     public static OI m_oi;
     public static String AutoCommand = "";
     public static Command command;
