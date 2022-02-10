@@ -2,6 +2,7 @@ package frc.robot;
 
 import frc.robot.commands.ClimbDown;
 import frc.robot.commands.ClimbUp;
+import frc.robot.commands.ShootBall;
 import frc.robot.commands.Square_Auto;
 import frc.robot.commands.toggleIntake;
 import frc.robot.subsystems.DrivetrainSubsystem;
@@ -29,6 +30,7 @@ public class OI {
         );
         new JoystickButton(primaryJoystick,6).whenPressed(new ClimbUp());
         new JoystickButton(primaryJoystick, 5).whenPressed(new ClimbDown());
+        new JoystickButton(primaryJoystick, 2).whenPressed(new ShootBall());
     }
 
     public Joystick getPrimaryJoystick() {

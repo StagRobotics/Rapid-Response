@@ -18,6 +18,9 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
 import frc.robot.commands.DriveCommand;
@@ -74,6 +77,12 @@ public class DrivetrainSubsystem extends Subsystem {
     );
 
     private final Gyroscope gyroscope = new NavX(SPI.Port.kMXP);
+
+    public NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+
+    public NetworkTableEntry tx = table.getEntry("tx");
+    public NetworkTableEntry ty = table.getEntry("ty");
+    public NetworkTableEntry ta = table.getEntry("ta");
 
     public DrivetrainSubsystem() {
         gyroscope.calibrate();
@@ -137,5 +146,20 @@ public class DrivetrainSubsystem extends Subsystem {
     @Override
     protected void initDefaultCommand() {
         setDefaultCommand(new DriveCommand());
+    }
+
+    public void log(){
+            SmartDashboard.putNumber("LimeLightX", tx.getDouble(0.0));
+            SmartDashboard.putNumber("LimeLightY", ty.getDouble(0.0));
+            SmartDashboard.putNumber("LimeLightArea", ta.getDouble(0.0));
+    }
+    public void getBall(){
+            if (tx.getDouble(0.0) < -1){
+                getInstance().drive(new Translation2d(0.0, 0.5), 0.0, true);
+            }else if(tx.getDouble(0.0) > 1){
+                getInstance().drive(new Translation2d(0.0, -0.5), 0.0, true);
+            }else {
+
+            }
     }
 }

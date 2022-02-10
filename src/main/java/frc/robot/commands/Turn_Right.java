@@ -4,13 +4,12 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.DrivetrainSubsystem;
 
-public class Turn_Left extends Command {
-    
+public class Turn_Right extends Command {
     private double turn = 0.0;
     private double up = 0.0;
     private double side = 0.0;
 
-    public Turn_Left(double angle){
+    public Turn_Right(double angle){
 
         requires(DrivetrainSubsystem.getInstance());
         turn = angle;
