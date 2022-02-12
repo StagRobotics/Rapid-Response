@@ -6,7 +6,6 @@ import frc.robot.commands.ShootBall;
 import frc.robot.commands.Square_Auto;
 import frc.robot.commands.toggleIntake;
 import frc.robot.subsystems.DrivetrainSubsystem;
-import frc.robot.subsystems.Fangs;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.InstantCommand;

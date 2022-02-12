@@ -30,4 +30,12 @@ public class RobotMap {
 
     //Digital Input
     public static int climbLimit  = 4;
+
+    //Pnuematics
+    public static int extender1 = 0;
+    public static int extender2 = 1;
+    public static int kicker1 = 2;
+    public static int kicker2 = 3;
+    public static int grabber1 = 4;
+    public static int grabber2 = 5;
 }

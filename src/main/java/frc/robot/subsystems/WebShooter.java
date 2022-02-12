@@ -2,19 +2,23 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
-import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import frc.robot.RobotMap;
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 
 
 public class WebShooter extends Subsystem {
     
     private PWMVictorSPX smbs = new PWMVictorSPX(RobotMap.backspinMotor);
-    private Spark sms = new Spark(RobotMap.shooterMotor);
+    private PWMVictorSPX sms = new PWMVictorSPX(RobotMap.shooterMotor);
+    private DoubleSolenoid kicker = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, RobotMap.kicker1, RobotMap.kicker2);
+
     private boolean Shoot = false;
+    private boolean kick = false;
     private boolean Spin = false;
     private double SMSpeed = 0.4;
     private double BSSpeed = 0.4;
+    
 
     public WebShooter(){
         super();
@@ -68,6 +72,16 @@ public class WebShooter extends Subsystem {
     public void SMOff(){
         sms.set(0.0);
     }
-
+    public void ToggleKicker(){
+        if(kick == false){
+            kicker.set(DoubleSolenoid.Value.kForward);
+            kick = true;
+            System.out.print(kick);
+        }else if (kick == true){
+            kicker.set(DoubleSolenoid.Value.kReverse);
+            kick = false;
+            System.out.print(kick);
+        }
+    }
 
 }
