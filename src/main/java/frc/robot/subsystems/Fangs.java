@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
@@ -11,7 +12,7 @@ public class Fangs extends Subsystem {
   private boolean onIntake = false;
   private boolean extend = false;
   private DoubleSolenoid extender = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, RobotMap.extender1, RobotMap.extender2);
-  private Relay intakeMotor = new Relay(RobotMap.intakeMotor);
+  private Spark intakeMotor = new Spark(RobotMap.intakeMotor);
     
 
   public Fangs(){
@@ -41,15 +42,15 @@ public class Fangs extends Subsystem {
   }
     
   public void intakeForward() {
-    intakeMotor.set(Relay.Value.kForward);
+    intakeMotor.set(0.5);
   }
     
   public void intakeBackward() {
-    intakeMotor.set(Relay.Value.kReverse);
+    intakeMotor.set(-0.5);
   }
         
   public void intakeOff(){
-    intakeMotor.set(Relay.Value.kOff);
+    intakeMotor.set(0.0);
   }
     
     
